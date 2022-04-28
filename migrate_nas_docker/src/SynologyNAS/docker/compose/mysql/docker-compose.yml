@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mysql:
+    build: .
+    container_name: mysql-8
+    ports:
+      - "3306:3306"
+    volumes:
+      - "/volume1/Databases/mysql-8.0:/var/lib/mysql"
+      - "/volume1/docker/mysql/config/my.cnf:/etc/mysql/my.cnf"
+      - "/var/services/homes/developer/sql:/home/yukio/sql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=yourpassword
